@@ -23,8 +23,8 @@
     <script src="https://unpkg.com/vue-router@3.0.1/dist/vue-router.js"></script>
     <script>
 
-        var Main={template:'<div>main</div>'};
-        var Login={template:'<div>login</div>'};
+        var Main={template:'<div>메인으로이동</div>'};
+        var Login={template:'<div><input type="text"></input><br>로그인화면 이동</div>'};
 
         var routes=[
             {path:'/main',component: Main},
@@ -32,7 +32,7 @@
         ];
 
         var router=new VueRouter({
-            mode:'history',
+            //mode:'history',
             routes
         });
 
