@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue with Axios Sample</title>
+</head>
+<body>
+    <div id="app">
+       <button v-on:click="clickBtn">클릭</button>
+       
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        new Vue({
+                el:'#app',
+
+                data:{
+                   
+                },
+
+                methods:{
+                   clickBtn:function(event){
+                       console.log(event);
+                  }
+                        
+                }
+                
+});
+//오늘도 코딩해서 신난다 아자아자 가즈이!!!!</script>
+</body>
+</html>
