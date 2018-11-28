@@ -9,7 +9,7 @@
     <div id="app">
        <a v-if="flag">두잇 Vues.js</a>
        <ul>
-                <li v-for="system in systems">{{system}}</li>
+                <li v-for="systems2 in systems">{{systems2}}</li>
        </ul>
 
        <p v-show="flag">두잇 Vues.js</p>
@@ -17,6 +17,9 @@
        <h5 v-bind:id="uid">뷰입문서</h5>
 
        <button v-on:click="popupAlert">경고창 버튼</button>
+       <button v-on:click="popup">팝업버튼</button>
+       <button v-on:click="information">정보창</button>
+       <button v-on:click="information1">information1</button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
@@ -24,8 +27,10 @@
     <script>
         new Vue({
                 el:'#app',
+
                 data:{
-                    flag:true,
+                    flag:false,
+                    //flag:true,
                     systems:['android','ios','windows'],
                     uid:10
                 },
@@ -34,8 +39,23 @@
                     popupAlert:function(){
                         return alert('경고창표시');
                     }
+                    ,
+                    popup:function(){
+                        return alert('팝업메뉴');
+                    }
+                    ,
+                    information:function(){
+                        return alert(information1());
+                    }
+                    ,
+                    information1:function(){
+                        return alert('Hello');
+                    }
+
+                        
                 }
+                
 });
-</script>
+//오늘도 코딩해서 신난다 아자아자 가즈이!!!!</script>
 </body>
 </html>
