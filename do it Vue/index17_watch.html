@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue with Axios Sample</title>
+</head>
+<body>
+    <div id="app">
+       <input v-model="message">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        new Vue({
+           
+           //웹앱의 경우 데이터를 요청하고 결과 값을 기다리려면 언제 올지 모른다. 따라서 해당 데이터를 요창하고 응답을 기다리는데 이를 자바스크립트의 
+           //비동기적 처리의 로직입니다.
+           //watch의 속성은 데이터 호출과 같이 시간이 상대적으로 더 많이 소모되는 비동기 처리에 적합하다.
+                el:'#app',
+
+                data:{
+                   message:'Hello world'
+                },
+
+                watch:{
+                    message:function(data){
+                        console.log('message의 값이 바뀝니다.',data);
+                    }
+                }                 
+                
+                
+});
+//오늘도 코딩해서 신난다 아자아자 가즈이!!!!</script>
+</body>
+</html>
