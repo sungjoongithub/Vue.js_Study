@@ -7,15 +7,14 @@
 </head>
 <body>
     <div id="app">
-       <button v-on:click="clickBtn">클릭</button>
+       <button v-on:click="clickBtn(1000)">클릭</button>
+       <!--클릭 값에 값을 넣어서 인자로 버튼에 값을 전달하는방법-->
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
         new Vue({
-            //el, data, methods 구분란에 콤마를 뺄경우 에러 발생했었다.
-            //구조계속익히자
                 el:'#app',
 
                 data:{
@@ -23,8 +22,8 @@
                 },
 
                 methods:{
-                   clickBtn:function(){
-                       alert('clicked');
+                   clickBtn:function(num){
+                       alert('clicked'+num+'times');
                    }
                         
                 }
