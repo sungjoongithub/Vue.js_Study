@@ -7,7 +7,11 @@
 </head>
 <body>
     <div id="app">
-       <button v-on:click="clickBtn">클릭</button>
+        <p>{{message}}</p>
+        <p>{{Matilda}}</p>
+       <button v-on:click="reverseMsg">문자열역순</button>
+
+       <button v-on:click="reversebutton">리버스버튼</button>
        
     </div>
 
@@ -18,15 +22,23 @@
                 el:'#app',
 
                 data:{
-                   
+                   message:'Hello world',
+                   Matilda:'Matilda'
                 },
 
                 methods:{
-                   clickBtn:function(event){
-                       console.log(event);
+                   reverseMsg:function(){
+                       this.message=this.message.split('').reverse().join('');
+                       return this.message;
+                   }
+                   ,
+                   reversebutton:function(){
+                       this.Matilda=this.Matilda.split('').reverse().join('');
+                       return this.Matilda;
+                   }
                   }
                         
-                }
+                
                 
 });
 //오늘도 코딩해서 신난다 아자아자 가즈이!!!!</script>
