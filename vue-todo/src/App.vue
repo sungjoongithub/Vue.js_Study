@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <TodoHeader></TodoHeader>
-    <TodoInput></TodoInput>
-    <TodoList></TodoList>
+    <!--App컴포넌트로 이벤트로 전달 할 수 있도록 설정 v-on-->
+    <TodoInput v-on:addTodo="addTodo"></TodoInput>
+    <TodoList v-bind:propsdata="todoItems"></TodoList>
     <TodoFooter></TodoFooter>
   </div>
 </template>
@@ -13,6 +14,11 @@ import TodoInput from './components/TodoInput.vue'
 import TodoList from './components/TodoList.vue'
 import TodoFooter from './components/TodoFooter.vue'
 export default {
+  data(){
+    return{
+      todoItems:[]
+  }
+},
  
   components: {
     'TodoHeader': TodoHeader,

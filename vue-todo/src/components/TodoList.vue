@@ -16,7 +16,8 @@
 
 <script>
 export default{
-
+        prps:['propsdata']
+,
         
         
         data(){
