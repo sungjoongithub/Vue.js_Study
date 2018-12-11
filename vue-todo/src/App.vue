@@ -19,6 +19,12 @@ export default {
       todoItems:[]
   }
 },
+methods:{
+addTodo(todoItem){
+  localStorage.setItem(todoItem,todoItem);
+  this.todoItems.push(todoItem);
+}
+},
  
   components: {
     'TodoHeader': TodoHeader,
