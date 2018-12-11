@@ -3,7 +3,7 @@
     <TodoHeader></TodoHeader>
     <!--App컴포넌트로 이벤트로 전달 할 수 있도록 설정 v-on-->
     <TodoInput v-on:addTodo="addTodo"></TodoInput>
-    <TodoList v-bind:propsdata="todoItems"></TodoList>
+    <TodoList v-bind:propsdata="todoItems" @removeTodo="removeTodo"></TodoList>
     <TodoFooter v-on:removeAll="clearAll"></TodoFooter>
   </div>
 </template>
@@ -31,16 +31,19 @@ export default {
 
 methods:{
 
-clearAll(){
-  localStorage.clear();
-  this.todoItems=[];
-},
-
-addTodo(todoItem){
-  localStorage.setItem(todoItem,todoItem);
-  this.todoItems.push(todoItem);
-}
-},
+    clearAll() {
+      localStorage.clear();
+      this.todoItems = [];
+    },
+		addTodo(todoItem) {
+			localStorage.setItem(todoItem, todoItem);
+			this.todoItems.push(todoItem);
+		},
+    removeTodo(todoItem, index) {
+      localStorage.removeItem(todoItem);
+      this.todoItems.splice(index, 1);
+    }
+  },
 
  
   components: {
