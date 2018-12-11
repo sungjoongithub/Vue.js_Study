@@ -1,6 +1,8 @@
 <template>
 
 <section>
+        <!--트랜지션그룹으로 리스트에 애니메이션 효과주려고하는중-->
+        <transition-group name="list" tag="ul">
         <li v-for="(todoItem,index) in propsdata" :key="todoItem" class="shadow">
                 <i class="checkBtn fas fa-check" aria-hidden="true"></i>
                 {{todoItem}}
@@ -8,6 +10,7 @@
                         <i class="far fa-trash-alt" aria-hidden="true"></i>
                 </span>
         </li>
+        </transition-group>
 
 
 <!--         
@@ -75,4 +78,13 @@ li{
         color:#de4343;
 }
 
+
+.list-enter-active,.list-leave-active{
+        transition: all 1s;
+}
+
+.list-enter,.listleave-to{
+        opacity: 0;
+        transform: translate(30px);
+}
 </style>
