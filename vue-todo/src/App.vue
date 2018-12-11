@@ -4,7 +4,7 @@
     <!--App컴포넌트로 이벤트로 전달 할 수 있도록 설정 v-on-->
     <TodoInput v-on:addTodo="addTodo"></TodoInput>
     <TodoList v-bind:propsdata="todoItems"></TodoList>
-    <TodoFooter></TodoFooter>
+    <TodoFooter v-on:removeAll="clearAll"></TodoFooter>
   </div>
 </template>
 
@@ -19,12 +19,29 @@ export default {
       todoItems:[]
   }
 },
+//이제 App.vue에서 중앙관리화 하기 떄문에 리스트에 있던 스크립트 코드를 여기로 가져온다.
+   created(){
+                if(localStorage.length>0){
+                        for(var i=0;i<localStorage.length;i++){
+                                this.todoItems.push(localStorage.key(i));
+                        }
+                }
+         
+        },
+
 methods:{
+
+clearAll(){
+  localStorage.clear();
+  this.todoItems=[];
+},
+
 addTodo(todoItem){
   localStorage.setItem(todoItem,todoItem);
   this.todoItems.push(todoItem);
 }
 },
+
  
   components: {
     'TodoHeader': TodoHeader,
