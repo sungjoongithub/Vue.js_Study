@@ -1,45 +1,35 @@
 <template>
-  <div id="app">
-   
-  </div>
+<div id="app">
+  <Header></Header>
+    <Body></Body>
+    <Left></Left>
+    <Footer></Footer>
+</div>
 </template>
 
 <script>
+import Header from './components/Header.vue'
+import Body from './components/Body.vue'
+import Left from './components/Left.vue'
+import Footer from './components/Footer.vue'
 export default {
   name: 'app',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+ 
+components: {
+    'Header': Header,
+    'Body': Body,
+    'Left': Left,
+    'Footer': Footer
   }
 }
+
+  
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
 </style>
