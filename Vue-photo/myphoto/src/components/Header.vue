@@ -1,11 +1,19 @@
 <template>
-    <table border=1px weight="100%" height="100%" width="100%">
-            <tr>
-                    <td>1</td>
-                    <td>1</td>
-            </tr>
-    </table>
-
+    <div id="wrap">
+    <header>
+      <a class="logo" href="#home">
+        <img src="https://poiemaweb.com/img/logo.png" height="36px">
+      </a>
+      <nav>
+        <ul class="nav-items">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
 
 </template>
 
@@ -14,5 +22,29 @@
 </script>
 
 <style>
+/* Simple Reset CSS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: #58666e;
+      background-color: #f0f3f4;
+    }
+    li {
+      list-style: none;
+    }
+    a {
+      text-decoration: none;
+    }
+    header{
+            width:100%;
+            height:60px;
+            z-index: 2000;
+            background-color: #fff;
+            box-shadow: 0 2px 2px rgba(0,0,0,0.05), 0 1px 0 rgba(0,0,0,0.05);
+    }
 
 </style>
